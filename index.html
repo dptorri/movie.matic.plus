@@ -1,63 +1,142 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
+
 <head>
-	<title>Movie.Matic</title>
-<style>
-body {
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-img {
-	width:100%;
-	padding: 5%;
-}
-
-
-
-</style>
-		
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexbox Base</title>
 </head>
+<style>
+*{box-sizing: border-box; /*margin:0;padding: 0;border: 0;*/ font-family: 'Trebuchet MS';}
+.container-column{  display:flex;   flex-direction: column;  background-color:grey;          margin-left: 5%; width:90%;}
+.nav-bar li {       display: inline;                         background-color:lightseagreen; max-width:100%;}
+.movie-details{     display: flex; flex-wrap: wrap;          background-color:lightcoral;    max-width:100%;}
+.movie-poster{      display: flex; flex-wrap: wrap;          background-color:lightblue;     max-width:100%;height:auto;}
+.movie-plot{        display: block; flex-wrap: wrap;         background-color:lightcyan;     max-width:100%;height:auto;}
+.movie-score{       display: block; flex-wrap: wrap;         background-color:lightgreen;    max-width:100%;height:auto;}
+.cast-details{      display: block; flex-wrap: wrap;         background-color:lemonchiffon;  max-width:100%;height:auto;}
+.cast-list{         display: block; flex-wrap: wrap;         background-color:linen;         max-width:100%;height:auto;}
+.cast-stars{        display: flex; flex-wrap: wrap;          background-color:grey;          max-width:100%;height:auto;}
+p, li {font-size:1rem;}
+img.poster {height: 268px;width: 182px; margin-left:auto; margin-right: auto;}
+img.cast-pic { max-height: 210px;width: auto; padding: 3px;flex-shrink:1; }
+table {border-collapse: collapse;width: 100%;}
+th, td {    text-align: left;    padding: 8px;}
+tr:nth-child(even){background-color: #f2f2f2}
+th {    background-color: #4CAF50;    color: white;
+}
+li a {
+    text-decoration-line: none;
+    text-decoration-color: black;
+}
+ul {
+    list-style-type: none;
+  }
+img.logos{min-width:auto; max-width:2em;height: 1em;}
+@media screen and (max-width: 310px){
+    /*div#socialbar.a2a_kit.a2a_kit_size_32.a2a_floating_style.a2a_vertical_style{top:90%;left: 0%;bottom: 0%;}*/
+
+}
+@media screen and (min-width: 800px){
+    p, li {font-size:1.2rem;}
+.container-column{         display: flex;  flex-direction: column;flex-wrap: wrap; margin-left: 5%;  width: 90%;}
+section.m-details{         display: flex;  justify-content: center;flex-flow: row;  flex-wrap: wrap;}
+section div.movie-poster{  display: flex;  flex-grow:1;flex-wrap: wrap; height:auto;min-width: 200px;}
+section div.movie-plot {   display: block; flex-grow:4;flex-wrap: wrap; height:auto;width: 400px;}
+section div.movie-score{   display: block; flex-grow:1;flex-wrap: wrap; height:auto;min-width: 100px;max-width: 100%;}
+.c-details{                display: flex;  min-width: 400px;}
+.cast-list{                display: block; min-width: 400px;}
+.cast-stars{               display: flex;  min-width: 400px;}
+
+}
+</style>
 <body>
-
-<div id="navbar">
-	<ul>
-	  <li><a href="./index.html" alt="go to the Homepage">Home</a></li>
-	  <li><a href="movie.html">Hot movie</a></li>
-	  <li><a href="actor.html">Hot Star</a></li>
-	  <li><a href="https://dptorri.github.io/index.html">About</a></li>
-	</ul>
-</div><!--ends navbar-->
-
-<div id="news">
-	<h2>Movie Matic</h2>
-		<h3>Recent news:</h3>
-			<ul>
-				<li>Zoe Saldana Joins the Voice Cast of ‘My Little Pony: The Movie’</li>
-				<li>Hasbro and Lionsgate have signed Zoe Saldana for the voice cast of the animated “My Little Pony: The Movie,” Variety has learned exclusively.</li>
-				<li>Previously announced voice cast members include Sia, Liev Schreiber, Taye Diggs, Emily Blunt, Kristin Chenoweth, Uzo Aduba, and Michael Pena. Lionsgate is releasing “My Little Pony” on Oct. 6, 2017.</li>
-				<li>Jayson Thiessen is directing from a screenplay by Meghan McCarthy, writer and producer of the “My Little Pony: Friendship Is Magic” animated series.</li>
-				<li>Jamie Foxx Still Claiming Martin Scorsese Will Direct A Mike Tyson Biopic</li>
-				<li>While Martin Scorsese always seems to have a busy schedule, it might have opened up slightly given the recent revelation that he bailed on that Frank Sinatra biopic. The director’s next picture is expected to be the hitman tale “The Irishman,” which will reteam him with his longtime friend Robert De Niro, but according to Jamie Foxx, Scorsese is Still going to make a Mike Tyson biopic.</li>
-			</ul>
-</div>
-
-<div class="hot_movie">
-	<h3>Hottest Movie</h3>
-		<a href="./movie.html"><h3>Rogue One</h3>
-			<img src="file:///C:/Users/dptor/Documents/GitHub/dptorri.github.io/web/movie.matic.plus/images/rogue-one.jpg"></a>
-</div>
-
-<div class="hot_star">
-	<h3>Hottest Star</h3>
-						<a href="./actor.html"><h3>Felicity Jones</h3>
-						<p>Born: October 17, 1983</p>
-						<img src="images/felicity-jones.jpg"></a>	
-		
-			
-		
-</div>
-
+    <div class="container-column">
+        <p>container-column</p>
+        <div class="nav-bar">
+            <li>home</li>
+            <li><a href="index_.html">page1</a></li>
+            <li>page2</li>
+        </div>
+        <!-- ends nav-bar -->
+        <div class="movie-details">
+            <section class="m-details">
+                <div class="movie-poster">
+                    <img class="poster" src="img/poster.jpg" alt="Poster">
+                    <div id="socialbar" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="right:0px; top:150px;">
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_google_plus"></a>
+                        <a class="a2a_button_pinterest"></a>
+                        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                    </div>
+                    
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                   </div>
+                   <div class="movie-score">
+                <ul>
+                    <li>Year : 2013</li>
+                    <li>Genre : Biography, Comedy, Crime</li>
+                    <li>Rating : PG-13</li>
+                    <li><img class="logos" src="img/metacritic.png" alt=""> <a href="http://www.metacritic.com/g00/movie/the-wolf-of-wall-street?i10c.encReferrer="> Metacritic 75/100</a></li>
+                    <li> <img class="logos" src="img/imdb.png" alt=""> <a href="http://www.imdb.com/title/tt0993846/?ref_=nv_sr_1"> IMDB 8.2</a></li>
+                    <li> <img class="logos" src="img/tomato.png" alt=""> <a href="https://www.rottentomatoes.com/m/the_wolf_of_wall_street_2013/"> RotenTomatoes 77%</a></li>
+                </ul>
+            </div>
+                <div class="movie-plot">
+                    <p>The Wolf of Wall Street is a 2013  film directed by Martin Scorsese
+                            and written by Terence Winter, based on the memoir of the same name by Jordan Belfort. It recounts Belfort's
+                            perspective on his career as a stockbroker in New York City and how his firm Stratton Oakmont engaged
+                            in rampant corruption and fraud on Wall Street that ultimately led to his downfall.</p>
+                </div>
+            
+            </section>
+        </div>
+        <!--  movie-details -->
+        <div class="cast-details">
+            <p>cast-details</p>
+            <section class="c-details">
+            <div class="cast-list">
+                    <table>
+                        <tr>
+                            <th>Cast</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Leonardo DiCaprio</td>
+                            <td>Jordan Belfort</td>
+                        </tr>
+                        <tr>
+                            <td>Jonah Hill</td>
+                            <td>Donnie Azoff</td>
+                        </tr>
+                        <tr>
+                            <td>Margot Robbie</td>
+                            <td>Naomi Lapaglia</td>
+                        </tr>
+                        <tr>
+                            <td>Matthew McConaughey</td>
+                            <td>Mark Hanna</td>
+                        </tr>
+                        <tr>
+                                <td>see more...</td>
+                                <td>got to page 1 2 3 4 5 ...</td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="cast-stars">
+                <img class="cast-pic" src="img/a_1.jpg" alt="">
+                <img class="cast-pic" src="img/a_2.jpg" alt="">
+                <img class="cast-pic" src="img/a_3.jpg" alt="">
+                <img class="cast-pic" src="img/a_4.jpg" alt="">
+            </div></section>
+            <div class="footer">
+                <p>footer</p>
+            </div>
+        </div>
+    </div>
+    <!-- ends container-column -->
 </body>
-</html>
 
+</html>

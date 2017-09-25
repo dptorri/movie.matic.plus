@@ -1,0 +1,29 @@
+* {box-sizing: border-box;}
+* {padding: 0; margin: 0;}
+
+body {
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    min-height: 100vh;
+}
+
+.item{
+
+    display: inline-block;
+    background-color: red;
+    padding: 5px 5px 5px 5px;
+
+}
+ul li .item {
+    list-style-type: none;
+}
+.row {
+    background-color: darkgoldenrod;
+    padding: 5px 5px 5px 5px;
+}
+
+.column {
+    background-color:darkolivegreen;
+    padding: 5px 5px 5px 5px;
+}
